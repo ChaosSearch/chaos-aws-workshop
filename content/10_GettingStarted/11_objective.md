@@ -32,9 +32,6 @@ Each section builds upon the last, if you don&#39;t complete a section you can a
 * **Trigger = chaosMSTR-trg**
 * **Action = chaosMSTR-act**
 
-
-
-
 {{% notice note %}}
 ChaosSearch documentation may be referenced at [ChaosSearch Docs](https://docs.chaossearch.io) 
 {{% /notice %}}
