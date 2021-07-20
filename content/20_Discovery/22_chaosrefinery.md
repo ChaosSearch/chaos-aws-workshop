@@ -18,7 +18,11 @@ ChaosSearch&#39;s query cache feature when enabled is used for caching the resul
 
 ## Refinery Exercise
 
-In this exercise we will create a view for the Object Group( **chaosXX-obj** ) and Index we just created. **\* Note** - If you didn&#39;t create an Object Group in the first Exercise you may use **chasoMSTR-obj**. Our view name will be **chaosXX-v** where XX is the ID provided in the workshop package.
+In this exercise we will create a view for the Object Group( **chaosXX-obj** ) and Index we just created. 
+
+{{% notice info %}}
+If you didn&#39;t create an Object Group in the first Exercise you may use **chasoMSTR-obj**. Our view name will be **chaosXX-v** where XX is the ID provided in the workshop package.
+{{% /notice %}}
 
 Refinery Exercise Objectives:
 
@@ -48,7 +52,7 @@ Click on the **Gear Icon** on the right side of the screen.
 
   - Select **Refresh** to Preview the data
   - Select **Materialize with Regex** by **Select Transform**
-  - For **Field Transform Pattern (REGEX):** Enter **(\\S+[:])(\\d+)(\\S+)**
+  - For **Field Transform Pattern (REGEX):** Enter **https:\\/\\/(\\S+):(\\d+)(\\S+)**
   - Select the **+ Add Field** 3 times to add 3 new fields
   - Name the Fields:
     - Domain

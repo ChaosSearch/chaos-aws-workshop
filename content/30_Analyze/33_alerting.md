@@ -40,7 +40,8 @@ Select **Create Monitor** in the middle of the screen. In the **Configure Monito
 ## Define Monitor
 
 - **How do you want to define the monitor:** Enter **Define using visual graph**
-- **Index:** From the drop down select the **view** you created in the **Refinery exercise.**  **\* Note** - If you didn&#39;t create View in the Refinery Exercise you may use **chasoMSTR-v**.
+- **Index:** From the drop down select the **view** you created in the **Refinery exercise.**  
+**Note:** If you didn&#39;t create a view in the Refinery Exercise you may use **chasoMSTR-v**.
 - **Timefield:** From the **drop down, select timestamp**
 
 At this point your screen should look like:
@@ -49,7 +50,7 @@ At this point your screen should look like:
 
 Scroll down to view the remainder of the screen. The first thing you will see is the graph, this is a result from our choice for **How do you want to define the monitor:** Enter **Define using visual graph.**
 
-Since we are looking for **backend\_status\_codes \&lt;\&gt; 200,** we will define **Create Monitor For** and the **timeframe** of the **last 30 days.**
+Since we are looking for `backend_status_codes IS NOT 200` we will define **Create Monitor For** and the **timeframe** of the **last 30 days.**
 
 - Use the drop down list for **FOR THE LAST** and select **30 day(s)**
 - **For the where clause select**
@@ -71,8 +72,8 @@ Select the **Create** button on the bottom right of the screen. This will create
 To **Define** the **Trigger** enter the following:
 
 - **Trigger Name chaosXX-trg**
-- **Security Level** Choose the level from the drop down list, I&#39;ll choose **1**
-- **Trigger Condition choose the number of occurrences to trigger the Alert, I&#39;ll choose 10**
+- **Security Level** Choose the level from the drop down list. **Choose 1**
+- **Trigger Condition** choose the number of occurrences to trigger the alert. **Choose 10**
 
 ![](/images/analytics/definetrigger.jpg)
 

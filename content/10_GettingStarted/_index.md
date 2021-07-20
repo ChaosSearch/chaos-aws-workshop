@@ -33,10 +33,3 @@ ChaosSearch Index Views are logical indexes based on the physical indexes create
 ## Step 6 - Visualization
 
 Now that your data has been indexed, it is available to Elasticsearch and Kibana. Navigate to the Visualization tab to get started. In order to visualize and explore data in Kibana, you&#39;ll need to create an index pattern to retrieve data from Elasticsearch.
-
-
-{{% notice warning %}}
-<p style='text-align: left;'>
-The examples and sample code provided in this workshop are intended to be consumed as instructional content. These will help you understand how various AWS services can be architected to build a solution while demonstrating best practices along the way. These examples are not intended for use in production environments.
-</p>
-{{% /notice %}}
