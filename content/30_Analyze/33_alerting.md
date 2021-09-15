@@ -67,7 +67,7 @@ Click on the **Where** clause and type/select:
 - Operator: **is not**
 - Value: **200**
 
-  ![](/images/analytics/monitorfilter.jpg)
+  ![](/images/analytics/monitor_filter.jpg)
 
 You can leave the **Monitor Schedule** section at the bottom of the screen unchanged. 
 
