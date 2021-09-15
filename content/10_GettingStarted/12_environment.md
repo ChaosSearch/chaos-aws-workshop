@@ -12,7 +12,7 @@ The data is ingested directly, and indexed back to customer's AWS S3 buckets. Ac
 For this workshop, we will be using an S3 bucket that is already accessible and populated with ELB logs. 
 {{% /notice %}}
 
-Using Role Based Access Controls (RBAC), we have already configured a separated account for each user.
+Using Role Based Access Controls (RBAC), separated accounts are created for each user, and credentials provided prior to the workshop. 
 
 {{% notice note %}}
 For more information on AWS prerequisites check [ChaosSearch Quick Start Guide](https://docs.chaossearch.io/docs/quick-start-guide)

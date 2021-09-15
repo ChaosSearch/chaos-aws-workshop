@@ -10,7 +10,7 @@ Using Chrome as your web browser, navigate to:
 
 [https://poc-trial.chaossearch.io/](https://poc-trial.chaossearch.io/)
 
-Enter the email, password, and Account ID information provided on the email.
+Enter the email, password, and Account ID information provided.
 
 ![Login screen](/images/gettingstarted/logginon.jpg)
 

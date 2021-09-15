@@ -10,7 +10,8 @@ Visualize will provide different types of visualizations/graphs to analyze the d
 
 ### Create Visualizations
 
-One simple way to create visualizations is directly from the **Discovery** page. Just select any non-number field from the list of **Available Fields** on the left side of the screen to see a quick list of the top 5 values of the field:
+One simple way to create visualizations is directly from the **Discovery** page. Just select any non-number field from the list of **Available Fields** on the left side of the screen to see a quick list of the top 5 values of the field.
+You can for example search and select the **backend\_status\_code:200** field:
 
 ![](/images/analytics/quickvisualize.jpg)
 

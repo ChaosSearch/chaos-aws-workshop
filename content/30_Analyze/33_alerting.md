@@ -16,7 +16,7 @@ ChaosSearch alerts page shows a list of all alerts that are visible within the p
 
 3. Create Destination - Choose between a Slack channel, AWS Chime, or you can set up a custom webhook to receive messages. If you choose a custom webhook, you will set up headers and a message body, and the plugin will POST its message to the destination URL.
 
- In Kibana, Alerts are accessed by selecting the Alert icon as indicated on the pictured below:
+ In Kibana, Alerts are accessed by selecting Alerting on the left menu, as indicated on the pictured below:
 
 ![](/images/analytics/kibanaalerting.jpg)
 
@@ -29,7 +29,6 @@ Objectives:
 
  - Create *Monitor*
  - Create *Trigger* and *Action*
-
 
 ### Create Monitor
 
@@ -58,11 +57,11 @@ At this point your screen should look like this:
 
 Scroll down to view the remainder of the screen. The first thing you will see is the graph, this is a result from our choice for **How do you want to define the monitor:** **Define using visual graph.**.
 
-Since we are looking for error status codes, we will define **Create Monitor for** using `backend_status_codes IS NOT 200` and set the time filter for the **last 30 days.**
+Since we are looking for error status codes, we will define **Create Monitor for** using `backend_status_codes IS NOT 200`.
 
-Use the dropdown list on the **FOR THE LAST** section and select **30 day(s)**
+For the interval, we can keep the **FOR THE LAST** field as **1 hour**
 
-On the **Where** clause, select:
+Click on the **Where** clause and type/select:
 
 - Field: **backend\_status\_code**
 - Operator: **is not**
@@ -70,10 +69,7 @@ On the **Where** clause, select:
 
   ![](/images/analytics/monitorfilter.jpg)
 
-Scroll down to the **Monitor Schedule** section and select:
-
-- Frequency: **by interval**
-- Every: **1** - **Minutes**
+You can leave the **Monitor Schedule** section at the bottom of the screen unchanged. 
 
 Select the **Create** button on the bottom right of the screen. This will create the **Monitor** and bring you to a **Create Trigger** screen for the monitor.
 

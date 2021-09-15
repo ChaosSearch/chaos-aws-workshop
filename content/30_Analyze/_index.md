@@ -37,13 +37,13 @@ The screen will show an histogram of the top 500 logs for the last 30 days on th
 
 ### Create filters
 
-Now we want to filter the "good requests" (Status Code: 200) to view only the error codes. In other words we want to filter out all the 200 Status Codes.
+Now we want to filter out the "good requests" (Status Code: 200) to view only the error codes.
 
 To do this select **+ Add Filter** on the top left of the screen:
 
-- **Field: backend\_status\_code** 
-- **Operator: is not**
-- **Value: 200**
+- Field: **backend\_status\_code** 
+- Operator: **is not**
+- Value: **200**
 
 Click **Save**.
 

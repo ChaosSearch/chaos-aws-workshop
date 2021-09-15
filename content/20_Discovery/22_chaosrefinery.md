@@ -8,17 +8,11 @@ weight: 22
 
 The ChaosSearch Refinery® is a major component of the ChaosSearch service. It provides a variety of capabilities unique to the ChaosSearch platform and will provide a streamlined approach to transforming your data.
 
-The Refinery offers a collection of tooling geared to cleaning, preparing, and transforming data such that users can programmatically and visually interact with information as needed.
-
-Refinery Index Views replace Index Patterns. Index Views are logical indexes based on physical indexes.
-
-The Refinery gives users the unique ability to do Schema Transformation on index data for cleaning, preparing, and transforming without the need to write or execute code.
-
-ChaosSearch&#39;s query cache feature when enabled is used for caching the results of queries. After an initial query is executed, results are cached for improved search results and experience.
+The Refinery offers a collection of tooling geared to cleaning, preparing, and transforming data such that users can programmatically and visually interact with information as needed. 
 
 ### Refinery Exercise
 
-In this exercise we will create a view for the Object Group (**chaosXX-obj**) already created. 
+In this exercise we will create a *View* for the Object Group (**chaosXX-obj**) already created. 
 
 {{% notice info %}}
 If you didn't create an Object Group in the first Exercise you may use **chasoMSTR-obj**. Our view name will be **chaosXX-v** where XX is the ID provided in the workshop package.
@@ -36,7 +30,7 @@ Go to the **Refinery** tab and click **Create View** to start:
 
 ![](/images/preparing/createview.jpg)
 
-Use the search box to find and select the *Object Group* created on the previous step ***chaosXX-obj**):
+Use the search box to find and select the *Object Group* created on the previous step **(chaosXX-obj)**:
 
 ![](/images/preparing/selectobjectgroup.jpg)
 
@@ -83,13 +77,18 @@ On the next screen, select the **timestamp** as the **Timestamp Field,**.
 
 The last step is to name the *View* and select some options:  
 
-- **Cacheable**: allows the platform to create memoryless caches of query results to improve response times.
+- **Cacheable**: when enabled is used for caching the results of queries. After an initial query is executed, results are cached for improved search results and experience. 
 - **Case Insensitive**: by selecting Case insensitive users will now be able to search against terms regardless of case.
-- **Overwrite**: overwrite existing views
+- **Overwrite**:overwrite existing views.
+
+We suggest you enable both **Cacheable** and **Case Insensitive** options.
 
 Finally, click on **Create** to create the *View*.
 
 ![](/images/preparing/createviewfinal.jpg)
+
+
+
 
 
 {{% notice note %}}
