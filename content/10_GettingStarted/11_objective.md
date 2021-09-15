@@ -4,34 +4,37 @@ chapter = true
 weight = 11
 +++
 
-In this workshop we will use ChaosSearch to discover and monitor 404 errors in Elastic Load Balancing Logs (ELB) in S3 on AWS. There will be hands-on exercises to:
+In this workshop we will use ChaosSearch to discover and monitor 404 errors from Elastic Load Balancing (ELB) logs stored in S3. 
+The workshop will guide you through hands-on exercises to:
 
-- Discover ELB Logs and create an Object Group &amp; Index using the Storage tab
-- Create a view and transformation in the Refinery tab
-- Visualize the data in the view using Kibana
-- Monitor and Alert on 404 thresholds using Kibana and Slack
+- Discover ELB logs and create an *Object Group* and index using the *Storage* tab
+- Create a *View* and transform the data in the *Refinery* tab
+- Visualize the data in the *View* using the built-in *Kibana*
+- Create an Alert Monitor based on thresholds using *Kibana* and Slack
 
-Each participant will use the ID provided in the Workshop details to create objects for each section:
+Each participant will be provided a separate set of credentials to access the platform. We suggest following the naming convention when creating the resources on each section of the workshop:
 
-- Object Group = **chaosXX-obj** where XX is your ID
-- View = **chaosXX-v** where XX is your ID
-- Monitor = **chaosXX-mon** where XX is your ID
-- Trigger = **chaosXX-trg** where XX is your ID
-- Action = **chaosXX-act** where XX id your ID
+- Object Group = **chaosXX-obj**
+- View = **chaosXX-v**
+- Monitor = **chaosXX-mon**
+- Trigger = **chaosXX-trg**
+- Action = **chaosXX-act**
+
+(Please replace XX with your user ID provided)
 
 Each section will be explained before the exercise and help is available by asking questions in the chat window.
 
 
 {{% notice tip %}}
-Each section builds upon the last, if you don&#39;t complete a section you can always refer to the master object.
+This workshop is design in a way that each section builds upon the last, but in case you don't complete a particular section you can always refer to the master objects listed below to continue the workshop.
 {{% /notice %}}
 
-* **Object Group = chaosMSTR-obj**
-* **View = chaosMSTR-v**
-* **Monitor = chaosMSTR-mon**
-* **Trigger = chaosMSTR-trg**
-* **Action = chaosMSTR-act**
+- Object Group = **chaosMSTR-obj**
+- View = **chaosMSTR-v**
+- Monitor = **chaosMSTR-mon**
+- Trigger = **chaosMSTR-trg**
+- Action = **chaosMSTR-act**
 
 {{% notice note %}}
-ChaosSearch documentation may be referenced at [ChaosSearch Docs](https://docs.chaossearch.io) 
+ChaosSearch documentation can be found [here](https://docs.chaossearch.io/docs) 
 {{% /notice %}}

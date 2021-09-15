@@ -6,50 +6,47 @@ weight: 30
 
 ## Analytics
 
-In the analytics section, it&#39;s just Kibana, but we added a few extra features where you can see the query progress bar and the ability to cancel the query. Our Kibana is from the Open Distro open source project. Not from elastic.co open source. That is how we have some different features where items might be different.
-
-## Analytics Exercise
-
-Analytics Exercise Objectives:
-
-- Use the Discover Icon in Kibana and the View you created
-  - View the Data
-  - Filter the Data for backend\_status\_code not equal to 200
-  - Create a quick Visualization from the backend\_status\_code field
-- Use the Visualize Icon in Kibana to view **AWS ELB - Backend Status Codes** Pie Chart
-- Use the Dashboard Icon in Kibana to view the **ELB Dashboard**
+On the **Analytics** tab you can access the built-in Kibana interface, with a few extra features: a query progress bar at the top and a button to cancel the query. ChaosSearch built-in Kibana is based on the Open Distro open-source project.
 
 At the top of your screen, in the ChaosSearch Tabs, select **Analytics**.
 
-In Analytics select the **Discover** Icon on the top left side of your screen
+Objectives:
 
-Select the **View** you just created from the drop down list. **\* Note** - If you didn&#39;t create View in the Refinery Exercise you may use **chasoMSTR-v**.
+- Discover the data
+- Create filters
+- Create Visualizations
+- Dashboards
 
+### Discover the data
+
+On the left side of the screen, select **Discover**.
+
+On the drop-down list, select the **View** you just created (**chaosXX-v**) 
+
+{{% notice info %}}
+If you didn't create an a View in the previous exercise, you may use **chasoMSTR-obj**. 
+{{% /notice %}}
+ 
 ![](/images/analytics/selectview.jpg)
 
-Now Select **Last 30 Days** from the **Show Dates** drop down
+Now Select **Last 30 Days** from the **Show Dates** drop-down time filter at the top-right side of the screen.
 
 ![](/images/analytics/timefilter.jpg)
 
-This will return all ELB Status codes, but we need to focus only on the error codes. In other words not 200 ELB Status.
+The screen will show an histogram of the top 500 logs for the last 30 days on the top, and a pannel below with details on each log event. Click on the arrow on the left side of each log to check all the fields and values of the log.
 
-To do this Select + Add Filter on the top left of the screen:
+### Create filters
 
-- Enter **backend\_status\_code** for **Field**
-- Enter **is not** for **Operator**
-- Enter **200** for **Value**
-- Click **Save**
+Now we want to filter the "good requests" (Status Code: 200) to view only the error codes. In other words we want to filter out all the 200 Status Codes.
+
+To do this select **+ Add Filter** on the top left of the screen:
+
+- **Field: backend\_status\_code** 
+- **Operator: is not**
+- **Value: 200**
+
+Click **Save**.
 
 ![](/images/analytics/createfilter.jpg)
 
-Now we will create a quick Visualization based on the data returned in the Discover page.
-
-Scroll down the list of fields on the left side of the screen to **backend\_status\_code** and click on the field.
-
-Next click on **Visualize**
-
-![](/images/analytics/quickvisualize.jpg)
-
-Kibana creates a quick bar chart based on the field **backend\_status\_code** and the filter **NOT backend\_status\_code: 200**
-
-![](/images/analytics/quickvisualization.jpg)
+Now both the histogram and the log details pannel are filtered for Status Codes different than 200.

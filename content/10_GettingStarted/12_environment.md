@@ -4,15 +4,16 @@ chapter = true
 weight = 12
 +++
 
-ChaoSearch separates compute and storage, where we own the compute and our customers own the storage. Today&#39;s workshop is on AWS and there are some prerequisites that have been met before the workshop started:
+The ChaoSearch platform separates compute from storage. While compute is provided by ChaosSearch on a true SaaS model (no instances to choose or manage), all the storage is provided by AWS S3.
 
-- An existing AWS account with S3 bucket privileges
-- AWS account access with read/write IAM privileges
-- Your **Chaos** Search customer ID for IAM configuration
-- **Chaos** Search Email / Password
+The data is ingested directly, and indexed back to customer's AWS S3 buckets. Access to the data from the Chaossearch platform is controlled by the customer through standard IAM policies.
 
-Using Role Based Access Controls(RBAC) we have already configured each user account. The email and password are in your workshop package.
+{{% notice info %}}
+For this workshop, we will be using an S3 bucket that is already accessible and populated with ELB logs. 
+{{% /notice %}}
 
-Find more information on the prerequisites in our documentation
+Using Role Based Access Controls (RBAC), we have already configured a separated account for each user.
 
-[https://docs.chaossearch.io/docs/quick-start-guide](https://docs.chaossearch.io/docs/quick-start-guide)
+{{% notice note %}}
+For more information on AWS prerequisites check [ChaosSearch Quick Start Guide](https://docs.chaossearch.io/docs/quick-start-guide)
+{{% /notice %}}

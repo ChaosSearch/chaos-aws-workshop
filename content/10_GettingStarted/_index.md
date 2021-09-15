@@ -6,30 +6,18 @@ weight: 10
 
 ## Introduction
 
-ChaosSearch is a fully managed, secure service on AWS backed by S3 as a data store. With a few clicks, customers can be up and running in minutes, all at a fraction of the cost of running your own Elasticsearch cluster or ELK Stack.
+ChaosSearch is a fully managed, secure service on AWS backed by Amazon S3 as a data store. With a few clicks, customers can be up and running in minutes, all at a fraction of the cost of running your own Elasticsearch cluster or ELK Stack.
 
 Learn how ChaosSearch unlocks your Amazon S3 storage and turns it into a secure, durable, and cost-effective search platform with both Amazon S3 and Elasticsearch APIs.
 
-## Step 1 - IAM Role and Policy Access
+### Step 1 - Discover and Index data directly from S3
 
-At ChaosSearch, we give you the ability to make more of your S3 infrastructure by turning into an elastic cluster. The first step in doing so is following the recommended set-up to start the creation of your IAM Role and Policy which will allow us to start listing out all of the S3 buckets within your AWS (Amazon Web Services) account.
+The first step is to allow ChaosSearch to connect to your S3 buckets using standard IAM Role and Policy or the Cloudformation template. After discover and cataloging the contents of your S3 bucket(s), users can set customizable filters to create the *Object Groups* and index the data in virtual buckets for fine-grained analysis.
 
-## Step 2 - Discover Your Data in S3
+### Step 2 - Transform the data with Refinery
 
-Discovery is the first step in understanding all of the files that are stored in your S3 bucket(s). When Discovery starts you will begin to see the different fields populate and update as we continue to understand the contents of the bucket.
+ChaosSearch *Views* are logical indexes based on the physical indexes (*Object Groups*). The *Refinery* allows users the unique ability to clean, prepare, and transform the index data. Schema Transformation can be applied to one or many fields to change data types (from string to numeral for example), expand the content of a single field into multiple fields for better analysis, among other capabilities. All the transformations can be done without the need to re-index data and you can have multiple *Views* based on the same *Object Group* for different analysis types or personas.
 
-## Step 3 - Create an Object Group, a Virtual S3 Bucket
+### Step 3 - Visualization and Alerting
 
-Object Groups are customizable filters for viewing what&#39;s in your buckets for fine-grained object analysis. These virtual buckets are our first steps in auto-discovering and indexing your data. As you move through the Object Group creation you will have the opportunity to define what filtering is needed to separate out the different files. Object Groups can be used for building filters on microservices, log type, log per application, etc.
-
-## Step 4 - Index your Data
-
-In order to see the platform in action, start indexing the data in one of your S3 buckets. During the indexing process, you will start to see different stats populating in the Group Details, Index Details, and Indexed Structure.
-
-## Step 5 - Refinery
-
-ChaosSearch Index Views are logical indexes based on the physical indexes created in the Storage section of the ChaosSearch Platform. The refinery allows users the unique ability to clean, prepare, and transform the index data. Schema Transformation can be applied to one or many fields and the changing of Types between a String, Number, or TimeVal without the need to re-index data.
-
-## Step 6 - Visualization
-
-Now that your data has been indexed, it is available to Elasticsearch and Kibana. Navigate to the Visualization tab to get started. In order to visualize and explore data in Kibana, you&#39;ll need to create an index pattern to retrieve data from Elasticsearch.
+Data from the *Views* are accessible through the Elasticsearch API and also using the built-in Kibana (based on the OpenDistro). Users can create individual visualizations or group multiple on a dashboard. There is also alerting capabilities to allow automated monitoring of events, and customizable triggers to send notifications when data crosses the thresholds set. ChaosSearch provides multiple alerting options with built-in integrations for Slack, Amazon Chime and custom Webhooks (integrates with your existing monitoring infrastructure or any third-party system.)

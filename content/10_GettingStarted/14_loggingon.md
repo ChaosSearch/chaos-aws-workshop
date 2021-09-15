@@ -10,9 +10,11 @@ Using Chrome as your web browser, navigate to:
 
 [https://poc-trial.chaossearch.io/](https://poc-trial.chaossearch.io/)
 
-Enter the email and password provided in your workshop package along with the Account ID 19d6ba1d-a15d-3b88-9597-180ddb0be2a4
+Enter the email, password, and Account ID information provided on the email.
 
 ![Login screen](/images/gettingstarted/logginon.jpg)
 
-We do have capabilities to support most single sign-on providers. Chaossearch also supports SAML 2.0.
 
+{{% notice note %}}
+ChaosSearch support most single sign-on providers, as well as SAML 2.0. For more information please check [ChaosSearch Single Sign-On documentation](https://docs.chaossearch.io/docs/single-sign-on)
+{{% /notice %}}
