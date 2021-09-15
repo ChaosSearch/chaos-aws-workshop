@@ -13,7 +13,7 @@ The S3 buckets will be listed on the left hand side of the page. The **chaosdemo
 ![](/images/storage/storage.jpg)
 
 
-## Bucket Discovery
+### Bucket Discovery
 
 Use the Data Discovery feature to quickly catalog and report on a variety of data sources in your buckets.
 
@@ -21,7 +21,7 @@ Select **chaosdemo-datasets** and highlight the **Bucket Content**. The Discover
 
 ![](/images/storage/bucketdiscovery.jpg)
 
-## Storage Exercise
+### Storage Exercise
 
 For this exercise we will group ELB Logs together in a virtual bucket called *Object Group*. We will apply a filter to select only the ELB logs, and then proceed to create an index.
 
