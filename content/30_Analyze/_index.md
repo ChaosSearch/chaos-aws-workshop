@@ -47,6 +47,6 @@ To do this select **+ Add Filter** on the top left of the screen:
 
 Click **Save**.
 
-![](/images/analytics/createfilter.jpg)
+![](/images/analytics/create_filter.jpg)
 
 Now both the histogram and the log details pannel are filtered for Status Codes different than 200.

@@ -13,7 +13,7 @@ Visualize will provide different types of visualizations/graphs to analyze the d
 One simple way to create visualizations is directly from the **Discovery** page. Just select any non-number field from the list of **Available Fields** on the left side of the screen to see a quick list of the top 5 values of the field.
 You can for example search and select the **backend\_status\_code:200** field:
 
-![](/images/analytics/quickvisualize.jpg)
+![](/images/analytics/quick_visualize.jpg)
 
 Then click on **Visualize** button to create a visualization for this field. Kibana creates a quick bar chart based on the field **backend\_status\_code**:
 

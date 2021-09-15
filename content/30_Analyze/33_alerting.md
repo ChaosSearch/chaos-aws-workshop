@@ -18,7 +18,7 @@ ChaosSearch alerts page shows a list of all alerts that are visible within the p
 
  In Kibana, Alerts are accessed by selecting Alerting on the left menu, as indicated on the pictured below:
 
-![](/images/analytics/kibanaalerting.jpg)
+![](/images/analytics/kibana_alerting.jpg)
 
 
 ### Alerting Exercise
