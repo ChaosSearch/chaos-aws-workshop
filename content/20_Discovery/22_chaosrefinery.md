@@ -75,7 +75,7 @@ On the next screen, select the **timestamp** as the **Timestamp Field,**.
 
 ### Create the *View*
 
-The last step is to name the *View* and select some options:  
+The last step is give a name to the *View* **(chaosXX-v)** and select some options:  
 
 - **Cacheable**: when enabled is used for caching the results of queries. After an initial query is executed, results are cached for improved search results and experience. 
 - **Case Insensitive**: by selecting Case insensitive users will now be able to search against terms regardless of case.

@@ -8,15 +8,15 @@ weight: 33
 
 ChaosSearch enables you to monitor your data and send alert notifications automatically to users. Based on open standard Kibana tooling, it is easy to set up, manage, and monitor your alerts.
 
-ChaosSearch alerts page shows a list of all alerts that are visible within the platform. This guide will walk through the creation of an alert, that includes 3 steps:
+This guide will walk through the creation of an alert, that includes 3 steps:
 
-1. Create Monitor - Creating a monitor in ChaosSearch will allow you to specify a particular value that should be monitored when defining the monitor by utilizing the extraction query or visual graph.
+ - Create Monitor - Creating a monitor in ChaosSearch will allow you to specify a particular value that should be monitored when defining the monitor by utilizing the extraction query or visual graph.
 
-2. Create Trigger - To create a trigger, you specify the threshold value for the field that is being monitored. If the value of the field exceeds the threshold, the Monitor enters the Active state.
+ - Create Trigger - To create a trigger, you specify the threshold value for the field that is being monitored. If the value of the field exceeds the threshold, the Monitor enters the Active state.
 
-3. Create Destination - Choose between a Slack channel, AWS Chime, or you can set up a custom webhook to receive messages. If you choose a custom webhook, you will set up headers and a message body, and the plugin will POST its message to the destination URL.
+ - Create Destination - Choose between a Slack channel, AWS Chime, or you can set up a custom webhook to receive messages. If you choose a custom webhook, you will set up headers and a message body, and the plugin will POST its message to the destination URL.
 
- In Kibana, Alerts are accessed by selecting Alerting on the left menu, as indicated on the pictured below:
+ In Kibana, Alerts are accessed by selecting *Alerting* on the left menu, as indicated on the pictured below:
 
 ![](/images/analytics/kibana_alerting.jpg)
 
