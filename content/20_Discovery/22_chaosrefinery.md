@@ -57,7 +57,7 @@ Then, select **Materialize with Regex** on the **Select Transform** dropdown. Th
 For **Field Transform Pattern (REGEX):** Enter `https:\\/\\/(\\S+):(\\d+)(\\S+)`. Then select the **+ Add Field** 3 times to add 3 new fields:
 
 - Domain: data type: *STRING*
-- Port: data type: *NUMERAL*
+- Port: data type: *NUMBER*
 - Path: data type: *STRING*
 
 Then select **Refresh** to preview the data after the transformation.
