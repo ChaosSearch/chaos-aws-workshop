@@ -15,7 +15,7 @@ The Refinery offers a collection of tooling geared to cleaning, preparing, and t
 In this exercise we will create a *View* for the Object Group (**chaosXX-obj**) already created. 
 
 {{% notice info %}}
-If you didn't create an Object Group in the first Exercise you may use **chasoMSTR-obj**. Our view name will be **chaosXX-v** where XX is the ID provided in the workshop package.
+If you didn't create an Object Group in the first exercise you may use the master object: **chas-mstr-obj**. Our view name will be **chaosXX-v** where XX is the ID provided in the workshop package.
 {{% /notice %}}
 
 Objectives:

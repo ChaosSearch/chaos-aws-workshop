@@ -29,7 +29,7 @@ Each section will be explained before the exercise and help is available by aski
 This workshop is design in a way that each section builds upon the last, but in case you don't complete a particular section you can always refer to the master objects listed below to continue the workshop.
 {{% /notice %}}
 
-- Object Group = **chaosMSTR-obj**
+- Object Group = **chaos-mstr-obj**
 - View = **chaosMSTR-v**
 - Monitor = **chaosMSTR-mon**
 - Trigger = **chaosMSTR-trg**

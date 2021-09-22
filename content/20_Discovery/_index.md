@@ -27,19 +27,15 @@ For this exercise we will group ELB Logs together in a virtual bucket called *Ob
 
 Objectives:
 
-- Create an *Object Group*
 - Filter the ELB logs
 - Format, preview and validate
-- Index data
+- Create *Object Group*
 
-### Create an *Object Group*
+### Filter ELB logs
 
 To get started with object groups click on **Create Object Group** at the top of the screen:
 
 ![](/images/storage/createobjectgroup.jpg)
-
-
-### Filter ELB logs
 
 It is very common to have a single S3 bucket to store logs from multiple sources. In this case, the **chaosdemo-dataset** bucket available also contains multiple datasets. In order to filter on just the ELB Logs that we are interested for this exercice, let's do the following:
 
@@ -70,7 +66,7 @@ You should now see a formatted preview of the data. Now select **Create Object G
 ![](/images/storage/validateandcreate.jpg)
 
 
-### Index data
+### Create *Object Group*
 
 ChaosSearch can index data in different ways. *Static indexing* is used to index existing data in the bucket. *Live indexing* automates the index process using leveraging Amazon Simple Queue Service (SQS) to notify ChaosSearch when a new file lands in the S3, so ChaosSearch can collect the file and index automatically. There is also the option of *Realtime indexing* which also uses SQS but indexes in near realtime. Since we will be indexing historical/existing data, *Static indexing* is the best option.
 
