@@ -74,7 +74,7 @@ On the **Create Object Group** box, enter the following information:
 
 - **Name:** type the name for the Object Group (**chaosXX-obj** where the **XX** is your user ID provided)
 - **Live Indexing** leave unchecked (Static indexing)
-- **Indexing Interval:** leave as Daily. 
+- **Indexing Interval:** leave unchecked. 
 - **Retention:** uncheck the box for unlimited retention, or (optionally) set the retention period for the index.
 
 After validating the selections, press **Create** to create the *Object Group*:
