@@ -59,7 +59,7 @@ Scroll down to view the remainder of the screen. The first thing you will see is
 
 Since we are looking for error status codes, we will define **Create Monitor for** using `backend_status_codes IS NOT 200`.
 
-For the interval, we can keep the **FOR THE LAST** field as **1 hour**
+For the interval, we can keep the **FOR THE LAST** field as **15 days**
 
 Click on the **Where** clause and type/select:
 
