@@ -81,7 +81,7 @@ The last step is give a name to the *View* **(chaosXX-v)** and select some optio
 - **Case Insensitive**: by selecting Case insensitive users will now be able to search against terms regardless of case.
 - **Overwrite**:overwrite existing views.
 
-We suggest you enable both **Cacheable** and **Case Insensitive** options.
+For this exercise, we recommend leaving all options unchecked.
 
 Finally, click on **Create** to create the *View*.
 
