@@ -25,7 +25,7 @@
                             "unzip awscliv2.zip\n",
                             "sudo ./aws/install\n",
                             "export S3_BUCKET=s3://`aws s3 ls | cut -d' ' -f3 | grep chaosworkshopbucket`/elb-logs\n",
-                            "aws s3 cp s3://slima-chaos-aws-devday/elb-logs `echo $S3_BUCKET` --recursive\n",
+                            "aws s3 cp s3://chaos-aws-immersionday/elb-logs `echo $S3_BUCKET` --recursive\n",
                             "sudo shutdown -h now"
                         ]]
                     }
@@ -117,7 +117,7 @@
     },
     "Outputs": {
         "S3Bucket": {
-           "Description": "S3 Bucket storing the application logs",
+           "Description": "S3 Bucket storing the ELB logs",
             "Value" : {
                 "Fn::Join": [ "/", [
                     "https://us-east-1.console.aws.amazon.com/s3/buckets",
