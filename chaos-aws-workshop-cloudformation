@@ -1,0 +1,174 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "ChaosSearch AWS Workshop",
+    "Resources": {
+        "ChaosWorkshopInstance": {
+            "Type": "AWS::EC2::Instance",
+            "Properties": {
+                "KeyName": "ChaosWorkshopKey",
+                "ImageId": "ami-052efd3df9dad4825",
+                "InstanceType": "t2.medium",
+                "IamInstanceProfile" : {
+                    "Ref" : "ChaosWorkshopInstanceProfile"
+                },
+                "SecurityGroupIds": [
+                    { "Fn::GetAtt" : [ "ChaosWorkshopSg", "GroupId" ] }
+                ],
+                "UserData": {
+                    "Fn::Base64": {
+                        "Fn::Join": ["", [
+                            "#!/bin/bash -xe\n",
+                            "exec > >(tee /var/log/user-data.log|logger -t user-data -s 2>/dev/console) 2>&1\n",
+                            "sudo apt update\n",
+                            "sudo apt install unzip -y\n",
+                            "curl \"https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip\" -o \"awscliv2.zip\"\n",
+                            "unzip awscliv2.zip\n",
+                            "sudo ./aws/install\n",
+                            "export S3_BUCKET=s3://`aws s3 ls | cut -d' ' -f3 | grep chaosworkshopbucket`/elb-logs\n",
+                            "aws s3 cp s3://slima-chaos-aws-devday/elb-logs `echo $S3_BUCKET` --recursive\n",
+                            "sudo shutdown -h now"
+                        ]]
+                    }
+                },
+                "Tags" : [
+                    {
+                        "Key" : "Name",
+                        "Value" : "chaos-workshop"
+                     }
+                ]
+            }
+        },
+        "ChaosWorkshopRole": {
+            "Type": "AWS::IAM::Role",
+            "Properties": {
+                "AssumeRolePolicyDocument": {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                        {
+                            "Effect": "Allow",
+                            "Principal": {
+                                "Service": [
+                                    "ec2.amazonaws.com"
+                                ]
+                            },
+                            "Action": [
+                                "sts:AssumeRole"
+                            ]
+                        }
+                    ]
+                },
+                "Path": "/",
+                "Policies": [
+                    {
+                        "PolicyName": "chaos-workshop-policy",
+                        "PolicyDocument": {
+                            "Version": "2012-10-17",
+                            "Statement": [
+                                {
+                                    "Effect": "Allow",
+                                    "Action": "s3:*",
+                                    "Resource": "*"
+                                },
+                                {
+                                    "Effect": "Allow",
+                                    "Action": "ec2:*",
+                                    "Resource": "*"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "ChaosWorkshopInstanceProfile": {
+            "Type": "AWS::IAM::InstanceProfile",
+            "Properties": {
+                "Path": "/",
+                "Roles": [
+                    {
+                        "Ref": "ChaosWorkshopRole"
+                    }
+                ]
+            }
+        },
+        "ChaosWorkshopBucket": {
+            "Type": "AWS::S3::Bucket"
+        },
+        "ChaosWorkshopSg": {
+            "Type" : "AWS::EC2::SecurityGroup",
+            "Properties" : {
+                "GroupDescription": "Allow HTTP/HTTPS",
+                "SecurityGroupIngress": [
+                    {
+                        "IpProtocol" : "tcp",
+                        "FromPort" : 22,
+                        "ToPort" : 22,
+                        "CidrIp" : "0.0.0.0/0"
+                    }
+                ]
+            }
+        },
+        "ChaosWorkshopKey": {
+            "Type" : "AWS::EC2::KeyPair",
+            "Properties" : {
+                "KeyName" : "ChaosWorkshopKey"
+                }
+        },
+        "ChaosWorkshopSqs": {
+            "Type" : "AWS::SQS::Queue",
+            "Properties" : {
+                "QueueName" : "chaos-workshop-sqs",
+                "VisibilityTimeout" : 300
+            }
+        },
+        "ChaosWorkshopSqsPolicy": {
+            "Type" : "AWS::SQS::QueuePolicy",
+            "Properties" : {
+                "Queues" : [{ "Ref": "ChaosWorkshopSqs" }],
+                "PolicyDocument": {
+                    "Statement": [
+                        {
+                            "Effect": "Allow",
+                            "Principal": {
+                                "Service": "s3.amazonaws.com"
+                            },
+                            "Action": "sqs:*",
+                            "Resource": { "Fn::GetAtt": [ "ChaosWorkshopSqs", "Arn" ]},
+                            "Condition": {
+                                "ArnLike": {
+                                    "aws:SourceArn": {
+                                        "Fn::GetAtt": [ "ChaosWorkshopBucket", "Arn" ]
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "Effect": "Allow",
+                            "Principal": "*",
+                            "Action": "sqs:*",
+                            "Resource": {
+                                "Fn::GetAtt": [ "ChaosWorkshopSqs", "Arn" ]
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "Outputs": {
+        "S3Bucket": {
+           "Description": "S3 Bucket storing the application logs",
+            "Value" : {
+                "Fn::Join": [ "/", [
+                    "https://us-east-1.console.aws.amazon.com/s3/buckets",
+                    { "Fn::GetAtt" : ["ChaosWorkshopBucket", "DomainName"] }
+                    ]
+                ]
+            }
+        },
+        "SqsARN" : {
+            "Description": "SQS Queue ARN",
+            "Value" : { "Fn::GetAtt" : ["ChaosWorkshopSqs", "Arn"] }
+        }
+    }
+}
