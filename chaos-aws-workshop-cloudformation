@@ -24,8 +24,8 @@
                             "curl \"https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip\" -o \"awscliv2.zip\"\n",
                             "unzip awscliv2.zip\n",
                             "sudo ./aws/install\n",
-                            "export S3_BUCKET=s3://`aws s3 ls | cut -d' ' -f3 | grep chaosworkshopbucket`/elb-logs\n",
-                            "aws s3 cp s3://chaos-aws-immersionday/elb-logs `echo $S3_BUCKET` --recursive\n",
+                            "export S3_BUCKET=s3://`aws s3 ls | cut -d' ' -f3 | grep chaosworkshopbucket`\n",
+                            "aws s3 cp s3://chaos-aws-immersionday `echo $S3_BUCKET` --recursive\n",
                             "sudo shutdown -h now"
                         ]]
                     }
@@ -121,7 +121,7 @@
             "Value" : {
                 "Fn::Join": [ "/", [
                     "https://us-east-1.console.aws.amazon.com/s3/buckets",
-                    { "Fn::GetAtt" : ["ChaosWorkshopBucket", "DomainName"] }
+                    { "Ref" : "ChaosWorkshopBucket" }
                     ]
                 ]
             }
