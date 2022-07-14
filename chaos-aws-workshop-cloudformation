@@ -113,46 +113,6 @@
             "Properties" : {
                 "KeyName" : "ChaosWorkshopKey"
                 }
-        },
-        "ChaosWorkshopSqs": {
-            "Type" : "AWS::SQS::Queue",
-            "Properties" : {
-                "QueueName" : "chaos-workshop-sqs",
-                "VisibilityTimeout" : 300
-            }
-        },
-        "ChaosWorkshopSqsPolicy": {
-            "Type" : "AWS::SQS::QueuePolicy",
-            "Properties" : {
-                "Queues" : [{ "Ref": "ChaosWorkshopSqs" }],
-                "PolicyDocument": {
-                    "Statement": [
-                        {
-                            "Effect": "Allow",
-                            "Principal": {
-                                "Service": "s3.amazonaws.com"
-                            },
-                            "Action": "sqs:*",
-                            "Resource": { "Fn::GetAtt": [ "ChaosWorkshopSqs", "Arn" ]},
-                            "Condition": {
-                                "ArnLike": {
-                                    "aws:SourceArn": {
-                                        "Fn::GetAtt": [ "ChaosWorkshopBucket", "Arn" ]
-                                    }
-                                }
-                            }
-                        },
-                        {
-                            "Effect": "Allow",
-                            "Principal": "*",
-                            "Action": "sqs:*",
-                            "Resource": {
-                                "Fn::GetAtt": [ "ChaosWorkshopSqs", "Arn" ]
-                            }
-                        }
-                    ]
-                }
-            }
         }
     },
     "Outputs": {
@@ -165,10 +125,6 @@
                     ]
                 ]
             }
-        },
-        "SqsARN" : {
-            "Description": "SQS Queue ARN",
-            "Value" : { "Fn::GetAtt" : ["ChaosWorkshopSqs", "Arn"] }
         }
     }
 }
